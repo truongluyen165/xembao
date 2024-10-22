@@ -1,0 +1,215 @@
+/* Đặt lại các giá trị mặc định về margin và padding của tất cả phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết lập phong cách cho thẻ body */
+body {
+    width: 100%; 
+    margin: 0 auto; 
+    background-color: #f4f4f9; /* Tông màu nhạt và tinh tế */
+    font-family: 'Roboto', sans-serif; 
+    color: #333; /* Màu chữ dễ nhìn */
+}
+
+/* Định dạng danh sách trong thanh điều hướng */
+nav ul { 
+    list-style: none;
+    text-align: center; 
+    padding: 15px 0;
+}
+
+/* Định dạng các mục trong danh sách điều hướng */
+nav li {
+    display: inline-block;
+    padding: 0 10px; 
+}
+
+/* Hiệu ứng khi di chuột qua các mục */
+nav li:hover a {
+    color: #ff6347; /* Đổi màu chữ thành đỏ cam khi hover */
+    transition: color 0.3s ease-in-out; /* Hiệu ứng chuyển động mượt */
+}
+
+/* Định dạng các liên kết trong thanh điều hướng */
+nav a {
+    text-decoration: none; 
+    color: #0a2d4a; 
+    font-size: 20px;
+}
+
+.home, nav li:last-child {
+    font-weight: bold;
+    color: #0a2d4a;
+}
+
+/* Định dạng tiêu đề h1 ngay sau nav */
+nav + h1 {
+    text-align: center; 
+    font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+    margin: 0 0 20px 0; 
+    color: #2a2a72; /* Màu chữ đậm */
+}
+
+/* Định dạng cho container chứa hình ảnh */
+div.img-container {
+    text-align: center; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+}
+
+div.img-container img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Bóng đổ */
+}
+
+/* Định dạng cho các bài viết trong phần main */
+main article {
+    width: calc(100% / 3); 
+    float: left; 
+    padding: 20px;
+    background-color: #fff; /* Nền trắng */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    text-align: justify;
+}
+
+/* Định dạng hình ảnh trong bài viết */
+article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Đảm bảo hình ảnh giữ đúng tỷ lệ */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Bóng đổ cho hình ảnh */
+}
+
+/* Định dạng tiêu đề h2 và h3 trong bài viết */
+article h2 {
+    text-align: center; 
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #3b3b8e; /* Màu chữ nổi bật */
+}
+
+article h3 {
+    text-align: center; 
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #7b7b7b; /* Màu xám nhẹ */
+}
+
+/* Khoảng cách trên cho các đoạn văn trong bài viết */
+article p {
+    padding-top: 5px;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Định dạng cho chữ cái đầu tiên của đoạn văn */
+article p:first-letter {
+    text-transform: uppercase;
+    font-size: 30px; 
+}
+
+/* Định dạng cho các phần tử span trong bài viết */
+article span {
+    background-image: url('./bg2.jpg'); 
+    padding: 10px;
+}
+
+/* Định dạng cho các liên kết trong bài viết */
+article a {
+    color: #fff; 
+    text-transform: uppercase; 
+    font-size: 20px;
+    text-decoration: none; 
+}
+
+article a:hover {
+    color: #ff6347; /* Hiệu ứng hover */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Định dạng cho biểu tượng xuất hiện trước liên kết */
+p span:first-of-type a::before {
+    content: url('./comment.png'); 
+    position: relative;
+    top: 7px;
+    padding: 0 8px;
+    right: 5px; 
+}
+
+/* Định dạng cho phần footer */
+footer {
+    clear: both; 
+    text-align: center; 
+    padding: 30px 0; 
+    font-size: 16px; 
+    background-color: #2a2a72;
+    color: #fff;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries cho màn hình nhỏ hơn 768px (điện thoại di động) */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+    }
+
+    nav li {
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    main article {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    article img {
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+/* Media Queries cho màn hình từ 768px đến 1024px (tablet) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        width: 90%;
+    }
+
+    main article {
+        width: calc(50% - 20px); /* Chiều rộng bài viết là 50% */
+    }
+
+    article img {
+        height: auto;
+    }
+}
+
+/* Media Queries cho màn hình lớn hơn 1024px (desktop) */
+@media (min-width: 1024px) {
+    body {
+        width: 85%;
+    }
+
+    nav a {
+        font-size: 22px;
+    }
+
+    main article {
+        width: calc(33.33% - 20px); /* Fit three articles side by side */
+    }
+}
